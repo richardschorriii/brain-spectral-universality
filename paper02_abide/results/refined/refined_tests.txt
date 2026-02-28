@@ -1,0 +1,207 @@
+PS C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\pipeline> python run_refined_tests.py --quick
+[QUICK MODE] max_abide=100
+
+=================================================================
+LOADING DATA
+=================================================================
+[ABIDE] Found 100 .1D files, loading...
+C:\Users\veilbreaker\AppData\Roaming\Python\Python310\site-packages\numpy\lib\_function_base_impl.py:3045: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+C:\Users\veilbreaker\AppData\Roaming\Python\Python310\site-packages\numpy\lib\_function_base_impl.py:3046: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[None, :]
+[ABIDE] Loaded 100 subjects (0 failed/skipped)
+  -> 100 ABIDE subjects loaded
+
+=================================================================
+TEST A: THREE-COMPONENT VARIANCE ANALYSIS
+=================================================================
+
+[TEST A] Three-Component Variance Analysis
+  CL density: 15%, samples per subject: 5
+  N subjects: 100
+  [1/100] 0050142
+  [51/100] 0050003
+
+  [TEST A RESULTS]
+  N subjects:                      100
+  Between-subject actual var:      0.005377
+  Between-subject CL var:          0.001786
+  Between-subject residual var:    0.007737
+  CL mean spread (convergence):    0.041439  (high = CL varies)
+  Within-subject corr (actual~CL): r = 0.9585
+  Within-subject R²:               91.9%  (degree explains this fraction of per-subject spectrum)
+  Saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\results\refined\test_a_decomposition.txt
+C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\pipeline\run_refined_tests.py:190: UserWarning: No artists with labels found to put in legend.  Note that artists whose label start with an underscore are ignored when legend() is called with no argument.
+  ax.legend(fontsize=9)
+  Figure saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\figures\refined\Figure_TestA_Decomposition.pdf
+  Figure saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\figures\refined\Figure_TestA_Decomposition.png
+
+=================================================================
+TEST B: EIGENVALUE STABILITY + RMSD LANDSCAPE
+=================================================================
+
+[TEST B] Eigenvalue Stability + RMSD Landscape
+  Subsampling 50 subjects...
+  Loaded 50 spectra
+
+  [TEST B1: Raw Eigenvalue Stability (CV across subjects)]
+  Rank k=1 (lambda2) CV:   0.1908
+  Min CV at rank:          k = 1  (CV = 0.1908)
+  Lambda2 stability rank:  #1 most stable
+
+  [TEST B2: RMSD Landscape (shape deviation from grand mean)]
+  Lambda2 (k=1) RMSD:  0.073595
+  Minimum RMSD at:     k = 18  (RMSD = 0.073595)
+
+  Named candidate RMSD scores (lower = better alignment):
+    lambda_2               RMSD = 0.073595  ← PMIR
+    lambda_max             RMSD = 0.073595
+    lambda_N/2             RMSD = 0.073595
+    mean                   RMSD = 0.073595
+    median                 RMSD = 0.073595
+    lambda_3               RMSD = 0.073595
+    lambda_4               RMSD = 0.073595
+    lambda_N/4             RMSD = 0.073595
+
+  Lambda2 RMSD rank among named candidates: #1
+  Saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\results\refined\test_b_landscape.txt
+  Figure saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\figures\refined\Figure_TestB_Landscape.pdf
+  Figure saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\figures\refined\Figure_TestB_Landscape.png
+
+=================================================================
+TEST C: SITE-BASED REPLICATION WITHIN ABIDE
+=================================================================
+
+[TEST C] Site-Based Replication within ABIDE
+  Sites found: 1
+    unknown: 100 subjects  [viable]
+[TEST C] Need >= 2 sites with >= 10 subjects.
+  Falling back to diagnosis split (ASD vs Control)...
+  ASD: 0, Control: 0
+[TEST C] Insufficient subjects for any replication strategy.
+[SUMMARY] Skipping — one or more tests missing
+
+=================================================================
+DONE
+  Results: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\results\refined
+  Figures: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\figures\refined
+=================================================================
+PS C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\pipeline> python run_refined_tests.py --quick
+[QUICK MODE] max_abide=100
+
+=================================================================
+LOADING DATA
+=================================================================
+[ABIDE] Found 100 .1D files, loading...
+[ABIDE] Loaded 100 subjects (0 failed)
+[ABIDE] Sites: {'Pitt': 50, 'Olin': 28, 'OHSU': 22}
+[ABIDE] DX: ASD=50, Control=50, Unknown=0
+  -> 100 ABIDE subjects loaded
+
+=================================================================
+TEST A: THREE-COMPONENT VARIANCE ANALYSIS
+=================================================================
+
+[TEST A] Three-Component Variance Analysis
+  CL density: 15%, samples per subject: 5
+  N subjects: 100
+  [1/100] OHSU_0050142
+  [51/100] Pitt_0050003
+
+  [TEST A RESULTS]
+  N subjects:                      100
+  Between-subject actual var:      0.005377
+  Between-subject CL var:          0.001786
+  Between-subject residual var:    0.007737
+  CL mean spread (convergence):    0.041439  (high = CL varies)
+  Within-subject corr (actual~CL): r = 0.9585
+  Within-subject R²:               91.9%  (degree explains this fraction of per-subject spectrum)
+  Residual vs diagnosis:           r=-0.0416, p=0.6813, n=100
+  -> Individuated component is not significant
+  Saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\results\refined\test_a_decomposition.txt
+  Figure saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\figures\refined\Figure_TestA_Decomposition.pdf
+  Figure saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\figures\refined\Figure_TestA_Decomposition.png
+
+=================================================================
+TEST B: EIGENVALUE STABILITY + RMSD LANDSCAPE
+=================================================================
+
+[TEST B] Eigenvalue Stability + RMSD Landscape
+  Subsampling 50 subjects...
+  Loaded 50 spectra
+
+  [TEST B1: Raw Eigenvalue Stability (CV across subjects)]
+  Rank k=1 (lambda2) CV:   0.1908
+  Min CV at rank:          k = 1  (CV = 0.1908)
+  Lambda2 stability rank:  #1 most stable
+
+  [TEST B2: RMSD Landscape (shape deviation from grand mean)]
+  Lambda2 (k=1) RMSD:  0.073595
+  Minimum RMSD at:     k = 18  (RMSD = 0.073595)
+
+  Named candidate RMSD scores (lower = better alignment):
+    lambda_2               RMSD = 0.073595  ← PMIR
+    lambda_max             RMSD = 0.073595
+    lambda_N/2             RMSD = 0.073595
+    mean                   RMSD = 0.073595
+    median                 RMSD = 0.073595
+    lambda_3               RMSD = 0.073595
+    lambda_4               RMSD = 0.073595
+    lambda_N/4             RMSD = 0.073595
+
+  Lambda2 RMSD rank among named candidates: #1
+  Saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\results\refined\test_b_landscape.txt
+  Figure saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\figures\refined\Figure_TestB_Landscape.pdf
+  Figure saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\figures\refined\Figure_TestB_Landscape.png
+
+=================================================================
+TEST C: SITE-BASED REPLICATION WITHIN ABIDE
+=================================================================
+
+[TEST C] Site-Based Replication within ABIDE
+  Sites found: 3
+    Pitt: 50 subjects  [viable]
+    Olin: 28 subjects  [viable]
+    OHSU: 22 subjects  [viable]
+
+  Comparing: Pitt (n=50) vs Olin (n=28)
+
+  --- Pitt ---
+  [lambda2] Processing subject 1/50: Pitt_0050003
+  [lambda2] Mean inter-subject correlation: r = 0.9848
+  [lambda2] Collapse score (CV, lower=better): 0.1620
+  [lambda2] Mean RMSD from universal curve:     0.0645
+  [lambda2] λ₂ range: [16.7605, 42.4879]
+  [lambda2] λ₂ CV: 18.7%
+
+  --- Olin ---
+  [lambda2] Processing subject 1/28: Olin_0050102
+  [lambda2] Mean inter-subject correlation: r = 0.9884
+  [lambda2] Collapse score (CV, lower=better): 0.1565
+  [lambda2] Mean RMSD from universal curve:     0.0664
+  [lambda2] λ₂ range: [17.5557, 44.5081]
+  [lambda2] λ₂ CV: 24.7%
+
+  [TEST C RESULTS]
+  Site               N        Mean r     Collapse CV
+  --------------------------------------------------
+  Pitt               50       0.9848     0.1620
+  Olin               28       0.9884     0.1565
+
+  Combined pool CV: 0.1604
+  [OK] Both sites r > 0.95
+  [OK] CV consistent (diff < 0.05)
+  [OK] Combined CV < 0.25
+
+  VERDICT: REPLICATED
+  Saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\results\refined\test_c_replication.txt
+  Figure saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\figures\refined\Figure_TestC_Replication.pdf
+  Figure saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\figures\refined\Figure_TestC_Replication.png
+  Figure saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\figures\refined\Figure_AllTests_Summary.pdf
+  Figure saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\figures\refined\Figure_AllTests_Summary.png
+
+=================================================================
+DONE
+  Results: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\results\refined
+  Figures: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\figures\refined
+=================================================================

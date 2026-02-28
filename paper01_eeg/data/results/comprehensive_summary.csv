@@ -1,0 +1,2 @@
+n_subjects,lambda2_mean,lambda2_std,lambda2_cv_percent,overall_correlation_5bands,null_mean,null_95ci_lower,null_95ci_upper,p_value_vs_null,connectivity_similarity_mean,connectivity_vs_spectral_rho,connectivity_vs_spectral_p,shapiro_wilk_p
+10,0.7086946524741232,0.10918595741741453,15.406629221235907,0.9852024160529629,0.0024114993125845647,-0.020123646910749533,0.027722894793414714,0.0,0.5868374216794788,0.18708827404479575,0.21846864486479997,0.5709993862982012

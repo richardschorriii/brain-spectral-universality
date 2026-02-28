@@ -1,0 +1,15 @@
+TEST C: Site-Based Replication
+====================================================
+Primary:   NYU (n=172)
+Secondary: UM (n=120)
+
+Primary mean r:    0.9885
+Secondary mean r:  0.9878
+Primary CV:        0.1471
+Secondary CV:      0.1511
+Combined pool CV:  0.1506
+
+Replication checks:
+  both_r_above_095: True
+  cv_consistent: True
+  combined_ok: True

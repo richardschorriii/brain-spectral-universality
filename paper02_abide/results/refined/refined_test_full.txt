@@ -1,0 +1,151 @@
+LOADING DATA
+=================================================================
+[ABIDE] Found 871 .1D files, loading...
+[ABIDE] Loaded 871 subjects (0 failed)
+[ABIDE] Sites: {'NYU': 172, 'UM': 120, 'UCLA': 85, 'USM': 67, 'Leuven': 56, 'Pitt': 50, 'MaxMun': 46, 'Trinity': 44, 'Yale': 41, 'KKI': 33, 'Olin': 28, 'SDSU': 27, 'SBL': 26, 'OHSU': 25, 'Stanford': 25, 'Caltech': 15, 'CMU': 11}
+[ABIDE] DX: ASD=403, Control=468, Unknown=0
+  -> 871 ABIDE subjects loaded
+
+=================================================================
+TEST A: THREE-COMPONENT VARIANCE ANALYSIS
+=================================================================
+
+[TEST A] Three-Component Variance Analysis
+  CL density: 15%, samples per subject: 15
+  N subjects: 871
+  [1/871] Caltech_0051461
+  [51/871] KKI_0050814
+  [101/871] Leuven_2_0050740
+  [151/871] MaxMun_d_0051330
+  [201/871] NYU_0050996
+  [251/871] NYU_0051053
+  [301/871] NYU_0051105
+  [351/871] OHSU_0050162
+  [401/871] Pitt_0050022
+  [451/871] SBL_0051572
+  [501/871] Stanford_0051179
+  [551/871] Trinity_0051135
+  [601/871] UCLA_1_0051255
+  [651/871] UM_1_0050284
+  [701/871] UM_1_0050351
+  [751/871] UM_2_0050414
+  [801/871] USM_0050494
+  [851/871] Yale_0050602
+
+  [TEST A RESULTS]
+  N subjects:                      871
+  Between-subject actual var:      0.005218
+  Between-subject CL var:          0.001888
+  Between-subject residual var:    0.007594
+  CL mean spread (convergence):    0.042664  (high = CL varies)
+  Within-subject corr (actual~CL): r = 0.9625
+  Within-subject R²:               92.6%  (degree explains this fraction of per-subject spectrum)
+  Residual vs diagnosis:           r=0.0021, p=0.9505, n=871
+  -> Individuated component is not significant
+  Saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\results\refined\test_a_decomposition.txt
+  Figure saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\figures\refined\Figure_TestA_Decomposition.pdf
+  Figure saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\figures\refined\Figure_TestA_Decomposition.png
+
+=================================================================
+TEST B: EIGENVALUE STABILITY + RMSD LANDSCAPE
+=================================================================
+
+[TEST B] Eigenvalue Stability + RMSD Landscape
+  Subsampling 200 subjects...
+  Loaded 200 spectra
+
+  [TEST B1: Raw Eigenvalue Stability (CV across subjects)]
+  Rank k=1 (lambda2) CV:   0.1774
+  Min CV at rank:          k = 1  (CV = 0.1774)
+  Lambda2 stability rank:  #1 most stable
+
+  [TEST B2: RMSD Landscape (shape deviation from grand mean)]
+  Lambda2 (k=1) RMSD:  0.068106
+  Minimum RMSD at:     k = 1  (RMSD = 0.068106)
+
+  Named candidate RMSD scores (lower = better alignment):
+    lambda_2               RMSD = 0.068106  ← PMIR
+    lambda_3               RMSD = 0.068106
+    lambda_4               RMSD = 0.068106
+    lambda_max             RMSD = 0.068106
+    lambda_N/2             RMSD = 0.068106
+    lambda_N/4             RMSD = 0.068106
+    mean                   RMSD = 0.068106
+    median                 RMSD = 0.068106
+
+  Lambda2 RMSD rank among named candidates: #1
+  Saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\results\refined\test_b_landscape.txt
+  Figure saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\figures\refined\Figure_TestB_Landscape.pdf
+  Figure saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\figures\refined\Figure_TestB_Landscape.png
+
+=================================================================
+TEST C: SITE-BASED REPLICATION WITHIN ABIDE
+=================================================================
+
+[TEST C] Site-Based Replication within ABIDE
+  Sites found: 17
+    NYU: 172 subjects  [viable]
+    UM: 120 subjects  [viable]
+    UCLA: 85 subjects  [viable]
+    USM: 67 subjects  [viable]
+    Leuven: 56 subjects  [viable]
+    Pitt: 50 subjects  [viable]
+    MaxMun: 46 subjects  [viable]
+    Trinity: 44 subjects  [viable]
+    Yale: 41 subjects  [viable]
+    KKI: 33 subjects  [viable]
+    Olin: 28 subjects  [viable]
+    SDSU: 27 subjects  [viable]
+    SBL: 26 subjects  [viable]
+    OHSU: 25 subjects  [viable]
+    Stanford: 25 subjects  [viable]
+    Caltech: 15 subjects  [viable]
+    CMU: 11 subjects  [viable]
+
+  Comparing: NYU (n=172) vs UM (n=120)
+
+  --- NYU ---
+  [lambda2] Processing subject 1/172: NYU_0050952
+  [lambda2] Processing subject 51/172: NYU_0051010
+  [lambda2] Processing subject 101/172: NYU_0051064
+  [lambda2] Processing subject 151/172: NYU_0051118
+  [lambda2] Mean inter-subject correlation: r = 0.9885
+  [lambda2] Collapse score (CV, lower=better): 0.1471
+  [lambda2] Mean RMSD from universal curve:     0.0507
+  [lambda2] λ₂ range: [17.1450, 35.2985]
+  [lambda2] λ₂ CV: 13.5%
+
+  --- UM ---
+  [lambda2] Processing subject 1/120: UM_1_0050272
+  [lambda2] Processing subject 51/120: UM_1_0050344
+  [lambda2] Processing subject 101/120: UM_2_0050406
+  [lambda2] Mean inter-subject correlation: r = 0.9878
+  [lambda2] Collapse score (CV, lower=better): 0.1511
+  [lambda2] Mean RMSD from universal curve:     0.0596
+  [lambda2] λ₂ range: [14.9992, 41.8760]
+  [lambda2] λ₂ CV: 18.9%
+
+  [TEST C RESULTS]
+  Site               N        Mean r     Collapse CV
+  --------------------------------------------------
+  NYU                172      0.9885     0.1471
+  UM                 120      0.9878     0.1511
+
+  Combined pool CV: 0.1506
+  [OK] Both sites r > 0.95
+  [OK] CV consistent (diff < 0.05)
+  [OK] Combined CV < 0.25
+
+  VERDICT: REPLICATED
+  Saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\results\refined\test_c_replication.txt
+  Figure saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\figures\refined\Figure_TestC_Replication.pdf
+  Figure saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\figures\refined\Figure_TestC_Replication.png
+  Figure saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\figures\refined\Figure_AllTests_Summary.pdf
+  Figure saved: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\figures\refined\Figure_AllTests_Summary.png
+
+=================================================================
+DONE
+  Results: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\results\refined
+  Figures: C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\figures\refined
+=================================================================
+PS C:\Users\veilbreaker\PMIR_Research\paper1_brain_universality\pipeline>

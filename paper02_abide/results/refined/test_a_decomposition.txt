@@ -1,0 +1,17 @@
+TEST A: Three-Component Variance Analysis
+====================================================
+N subjects:                      871
+CL density used:                 15%
+
+Between-subject actual var:      0.005218
+Between-subject CL var:          0.001888
+  -> CL convergence (mean std):  0.042664
+Between-subject residual var:    0.007594
+
+Within-subject corr (actual~CL): r = 0.9625
+Within-subject R²:               92.6%
+
+Residual vs diagnosis: r=0.0021, p=9.5050e-01, n=871
+
+INTERPRETATION:
+  Degree sequence explains 93% of per-subject spectral variance (within-subject R²).

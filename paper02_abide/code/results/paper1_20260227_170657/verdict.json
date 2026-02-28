@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-02-27T17:06:57.202054",
+  "checks": {
+    "resting_r_above_095": {
+      "result": true,
+      "value": 0.9857189822265994,
+      "threshold": 0.95
+    },
+    "degree_null_falsification": {
+      "result": false,
+      "real_rmsd": 0.060728119090039244,
+      "degree_null_rmsd": 0.06045858457961819,
+      "interpretation": "real brain RMSD < degree-null RMSD (brain more universal)"
+    },
+    "null_models_significant": {
+      "result": false
+    },
+    "lambda2_privileged": {
+      "result": true,
+      "lambda2_collapse_score": 0.16206296329986994,
+      "alternatives_collapse_scores": {
+        "lambda_max": 0.16206296329986994,
+        "mean_eigenvalue": 0.16206296329986994,
+        "spectral_radius": 0.16206296329986994
+      },
+      "note": "collapse_score = mean pointwise CV; lower = tighter spectral collapse"
+    },
+    "parcellation_independent": {
+      "result": false,
+      "n_parcellations_above_095": 1,
+      "threshold": 3
+    }
+  },
+  "overall": "FALSIFIED",
+  "notes": [],
+  "confirmation_rate": "2/5"
+}

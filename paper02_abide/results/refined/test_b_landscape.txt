@@ -1,0 +1,24 @@
+TEST B: Eigenvalue Stability + RMSD Landscape
+====================================================
+N subjects scanned:     200
+Max rank scanned:       50
+
+[B1: Raw Eigenvalue Stability]
+Lambda2 (k=1) CV:       0.1774
+Most stable rank:       k = 1
+
+[B2: RMSD Landscape]
+Lambda2 (k=1) RMSD:    0.068106
+Minimum RMSD at rank:  k = 1
+Minimum RMSD:          0.068106
+Lambda2 is minimum:    True
+
+Named candidate RMSD:
+  lambda_2               0.068106
+  lambda_3               0.068106
+  lambda_4               0.068106
+  lambda_max             0.068106
+  lambda_N/2             0.068106
+  lambda_N/4             0.068106
+  mean                   0.068106
+  median                 0.068106
