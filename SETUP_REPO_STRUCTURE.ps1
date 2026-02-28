@@ -48,7 +48,35 @@ Write-Host "[Paper 02] Copying results..." -ForegroundColor Yellow
 Copy-Item "$paper02src\results\*" "$repo\paper02_abide\results\" -Recurse -Force
 
 Write-Host "`nAll files copied successfully!" -ForegroundColor Green
-Write-Host "`nNext step: open a terminal in the repo folder and run:" -ForegroundColor Cyan
+
+# ============================================================
+# CLEANUP - Remove old root-level folders and stale files
+# ============================================================
+Write-Host "`nCleaning up old root-level items..." -ForegroundColor Yellow
+
+$foldersToRemove = @("brain-spectral-universality", "code", "data", "figures", "manuscript", "notebooks", "tables")
+foreach ($folder in $foldersToRemove) {
+    $path = "$repo\$folder"
+    if (Test-Path $path) {
+        Remove-Item $path -Recurse -Force
+        Write-Host "  Removed folder: $folder" -ForegroundColor DarkGray
+    }
+}
+
+$filesToRemove = @("BRANCH_STRATEGY.md", "PAPER2_README.md", "PRE_COMMIT_CHECKLIST.md", "requirements.txt")
+foreach ($file in $filesToRemove) {
+    $path = "$repo\$file"
+    if (Test-Path $path) {
+        Remove-Item $path -Force
+        Write-Host "  Removed file: $file" -ForegroundColor DarkGray
+    }
+}
+
+Write-Host "`nCleanup complete!" -ForegroundColor Green
+Write-Host "`nFinal repo structure:" -ForegroundColor Cyan
+Get-ChildItem $repo | Where-Object { $_.Name -notlike ".*" } | Format-Table Name, PSIsContainer -AutoSize
+
+Write-Host "`nNow commit and push to GitHub:" -ForegroundColor Cyan
 Write-Host "  git add ." -ForegroundColor White
 Write-Host "  git commit -m 'Restructure repo: paper01_eeg + paper02_abide clean layout'" -ForegroundColor White
 Write-Host "  git push" -ForegroundColor White
