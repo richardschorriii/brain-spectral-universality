@@ -1,0 +1,4 @@
+Rank,Connectivity Method,Overall Correlation,λ₂ CV (%),Band 1,Band 2,Band 3,Band 4,Band 5,N Subjects
+2,Pearson Correlation,0.9902,14.99,0.9995,0.9975,0.9953,0.9986,0.9602,5
+3,Magnitude-Squared Coherence,0.8538,7.84,0.9995,0.9817,0.6933,0.9707,0.6239,5
+1,Phase-Locking Value (PLV),0.9974,17.06,0.9989,0.9991,0.997,0.9935,0.9986,5
